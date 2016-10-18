@@ -11,7 +11,7 @@ config:
     friendly_name: Quote BOT
     info: A simple Python bot that returns famous quotes
     type: secret
-    global:true
+    global: true
     default: not secret though
 screenshots:
   - screenshot: resources/screenshot1.png
