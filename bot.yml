@@ -1,5 +1,5 @@
 name: QuoteBot
-description: A simple Python bot returns famous quotes
+description: A simple Python bot that returns famous quotes
 avatar: resources/avatar.png
 background: resources/background.png
 config:
@@ -7,10 +7,11 @@ config:
     friendly_name: Severity level to show for logging.
     info: See https://docs.python.org/2/library/logging.html#levels
     default: DEBUG
-  - name: SECRET
-    friendly_name: Shhhh
-    info: This is an secret option
+  - name: QuoteBOT
+    friendly_name: Quote BOT
+    info: A simple Python bot that returns famous quotes
     type: secret
+    global:true
     default: not secret though
 screenshots:
   - screenshot: resources/screenshot1.png
