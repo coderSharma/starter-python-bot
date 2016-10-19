@@ -21,14 +21,13 @@ class Messenger(object):
     def write_help_message(self, channel_id):
         bot_uid = self.clients.bot_user_id()
         txt = '{}\n{}\n{}\n{}'.format(
-            "I'm your friendly Slack bot written in Python.  I'll *_respond_* to the following commands:",
-            "> `hi <@" + bot_uid + ">` - I'll respond with a randomized greeting mentioning your user. :wave:",
-            "> `<@" + bot_uid + "> joke` - I'll tell you one of my finest jokes, with a typing pause for effect. :laughing:",
-            "> `<@" + bot_uid + "> attachment` - I'll demo a post with an attachment using the Web API. :paperclip:")
+            "HI :wave:, who doesnt like a good quote ?",
+            "> `hi <@" + bot_uid + ">` - I'll respond with a randomized greeting mentioning you. :wave:",
+            "> `<@" + bot_uid + "> Quote` - I'll tell you one of my finest quotes, ")
         self.send_message(channel_id, txt)
 
     def write_greeting(self, channel_id, user_id):
-        greetings = ['Hi', 'Hello', 'Nice to meet you', 'Howdy', 'Salutations']
+        greetings = ['Do you feel lucky ....']
         txt = '{}, <@{}>!'.format(random.choice(greetings), user_id)
         self.send_message(channel_id, txt)
 
@@ -37,27 +36,14 @@ class Messenger(object):
         txt = "I'm sorry, I didn't quite understand... Can I help you? (e.g. `<@" + bot_uid + "> help`)"
         self.send_message(channel_id, txt)
 
-    def write_joke(self, channel_id):
-        question = "Why did the python cross the road?"
+    def write_quote(self, channel_id):
+        question = "A guy opens his door and gets shot and you think that of me? No..."
         self.send_message(channel_id, question)
         self.clients.send_user_typing_pause(channel_id)
-        answer = "To eat the chicken on the other side! :laughing:"
+        answer = "I AM THE ONE WHO KNOCKS"
         self.send_message(channel_id, answer)
 
 
     def write_error(self, channel_id, err_msg):
         txt = ":face_with_head_bandage: my maker didn't handle this error very well:\n>```{}```".format(err_msg)
         self.send_message(channel_id, txt)
-
-    def demo_attachment(self, channel_id):
-        txt = "Beep Beep Boop is a ridiculously simple hosting platform for your Slackbots."
-        attachment = {
-            "pretext": "We bring bots to life. :sunglasses: :thumbsup:",
-            "title": "Host, deploy and share your bot in seconds.",
-            "title_link": "https://beepboophq.com/",
-            "text": txt,
-            "fallback": txt,
-            "image_url": "https://storage.googleapis.com/beepboophq/_assets/bot-1.22f6fb.png",
-            "color": "#7CD197",
-        }
-        self.clients.web.chat.post_message(channel_id, txt, attachments=[attachment], as_user='true')
