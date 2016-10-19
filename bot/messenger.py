@@ -23,7 +23,7 @@ class Messenger(object):
         txt = '{}\n{}\n{}\n{}'.format(
             "HI :wave:, who doesnt like a good quote ?",
             "> `hi <@" + bot_uid + ">` - I'll respond with a randomized greeting mentioning you. :wave:",
-            "> `<@" + bot_uid + "> Quote` - I'll tell you one of my finest quotes, ")
+            "> `<@" + bot_uid + "> Quote` - I'll tell you one of my finest quotes")
         self.send_message(channel_id, txt)
 
     def write_greeting(self, channel_id, user_id):
