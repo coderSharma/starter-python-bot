@@ -28,7 +28,7 @@ class Messenger(object):
         self.send_message(channel_id, txt)
 
     def write_greeting(self, channel_id, user_id):
-        greetings = ["Do you feel lucky ....", "Greetings ....","Winter is coming...", "Valar Morghulis...","Say hello to my little friend...","You talkin’ to me .."]
+        greetings = ["Do you feel lucky ....", "Greetings ....","Winter is coming...", "Valar Morghulis...","Say hello to my little friend...","You talkin to me .."]
         txt = '{} <@{}>!'.format(random.choice(greetings), user_id)
         self.send_message(channel_id, txt)
 
