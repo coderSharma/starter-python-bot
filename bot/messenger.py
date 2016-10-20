@@ -20,7 +20,7 @@ class Messenger(object):
 
     def write_help_message(self, channel_id):
         bot_uid = self.clients.bot_user_id()
-        txt = '{}\n{}\n{}\n{}'.format(
+        txt = '{}\n{}\n{}'.format(
             "Hi :wave:, who doesnt like a good quote ?",
             "> `hi <@" + bot_uid + ">` - I'll respond with a randomized greeting mentioning you. :wave:",
             "> `<@" + bot_uid + "> Quote` - I'll tell you one of my finest quotes"
