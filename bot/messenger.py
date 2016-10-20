@@ -20,7 +20,7 @@ class Messenger(object):
 
     def write_help_message(self, channel_id):
         bot_uid = self.clients.bot_user_id()
-        txt = '{}\n{}\n{}'.format(
+        txt = '{}\n{}\n'.format(
             "Hi :wave:, who doesnt like a good quote ?",
             "> `hi <@" + bot_uid + ">` - I'll respond with a randomized greeting mentioning you. :wave:",
             "> `<@" + bot_uid + "> Quote` - I'll tell you one of my finest quotes"
@@ -29,7 +29,7 @@ class Messenger(object):
 
     def write_greeting(self, channel_id, user_id):
         greetings = ['Do you feel lucky ....', 'Greetings ....', 'Winter is coming...', 'Valar Morghulis...','Say hello to my little friend...']
-        txt = '{}, <@{}>!'.format(random.choice(greetings), user_id)
+        txt = '{} <@{}>!'.format(random.choice(greetings), user_id)
         self.send_message(channel_id, txt)
 
     def write_prompt(self, channel_id):
