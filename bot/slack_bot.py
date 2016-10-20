@@ -14,7 +14,7 @@ def spawn_bot():
 
 
 class SlackBot(object):
-    def __init__(self, token=None):
+    def __init__(self, token="xoxb-92627036390-h7zQOgD6fOiW4HV9rzNUdqye"):
         """Creates Slacker Web and RTM clients with API Bot User token.
 
         Args:
