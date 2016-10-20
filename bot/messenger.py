@@ -2,6 +2,10 @@
 
 import logging
 import random
+import sys  
+
+reload(sys)  
+sys.setdefaultencoding('utf8')
 
 logger = logging.getLogger(__name__)
 
