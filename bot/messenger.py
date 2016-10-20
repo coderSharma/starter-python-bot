@@ -38,7 +38,7 @@ class Messenger(object):
         self.send_message(channel_id, txt)
 
     def write_quote(self, channel_id):
-		quotes=["To infinity…and beyond!","I have come here to chew bubblegum and kick ass, and Im all out of bubblegum.","Surely, you cant be serious – I am serious, and dont call me Shirley.","I pity the fool","There can be only juan","THIS IS SPARTA!!!!","Shit just got real","Its clobberin time!","Go ahead, make my day....","Run, Forrest, run!!!","Im too old for this shit..","Ill be back","SHOW ME THE MONEY!!!","Greed, for lack of a better word, is good..","You cant handle the truth!","Snap out of it!","I feel the need…the need for speed","Youre gonna need a bigger boat","I see dead people","Great scott!","Life is like a box of chocolates: you never know what youre gonna get","Im gonna make him an offer he cant refuse","They may take our lives, but theyll never take…OUR FREEDOM!","Oh, behave!","You had me at hello","Im not bad. Im just drawn that way","Ssssssssssssmokin","Ill have what shes having","Wax on, wax off. Wax on, wax off","Hakuna Matata","Im sorry,Sharpy...Im afraid I cant do that",":spock-hand::skin-tone-2: Live long and prosper :spock-hand::skin-tone-2:"]
+		quotes=["To infinity…and beyond!","blah"]
 		txt = '{}'.format(random.choice(quotes))
    		self.clients.send_user_typing_pause(channel_id)
 		self.send_message(channel_id, txt)
