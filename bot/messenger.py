@@ -34,17 +34,19 @@ class Messenger(object):
 
     def write_prompt(self, channel_id):
         bot_uid = self.clients.bot_user_id()
-        txt = "Whoa ... spell it out for me ? (e.g. `<@" + bot_uid + "> help`)"
+        txt = "Whoa ... spell it out for me.. please ? (e.g. `<@" + bot_uid + "> help`)"
         self.send_message(channel_id, txt)
 
     def write_quote(self, channel_id):
-		self.clients.send_user_typing_pause(channel_id)
-		quotes=["To infinity…and beyond!"]
-   		self.send_message(channel_id, quotes)
+		quotes=["To infinity…and beyond!","I have come here to chew bubblegum and kick ass, and I’m all out of bubblegum.","Surely, you can’t be serious.” – “I am serious, and don’t call me Shirley.","I pity the fool","There can be only @juantwothree","THIS IS SPARTA!!!!","Shit just got real","It’s clobberin’ time!","Go ahead, make my day....","Run, Forrest, run!!!","I’m too old for this shit..","I’ll be back","SHOW ME THE MONEY!!!","Greed, for lack of a better word, is good..","You can’t handle the truth!","Snap out of it!","I feel the need…the need for speed","You’re gonna need a bigger boat","I see dead people","Great scott!","Life is like a box of chocolates: you never know what you’re gonna get","I’m gonna make him an offer he can’t refuse","They may take our lives, but they’ll never take…OUR FREEDOM!","Oh, behave!","You had me at ‘hello’","I’m not bad. I’m just drawn that way","Ssssssssssssmokin","I’ll have what she’s having","Wax on, wax off. Wax on, wax off","Hakuna Matata","I’m sorry,@sharpy...I’m afraid I can’t do that",":spock-hand::skin-tone-2: Live long and prosper :spock-hand::skin-tone-2:"]
+		txt = '{} <@{}>!'.format(random.choice(quotes), user_id)
+   		self.clients.send_user_typing_pause(channel_id)
+		self.send_message(channel_id, txt)
 		
     def write_quoteBB(self, channel_id):
-		self.clients.send_user_typing_pause(channel_id)
 		quotesBB=["A guy opens his door and gets shot and you think that of me? No...I AM THE ONE WHO KNOCKS","What’s the point of being an outlaw when you got responsibilities?","Stay out of my territory","This is my own private domicile and I will not be harassed…bitch!"]
+		txt = '{} <@{}>!'.format(random.choice(quotesBB), user_id)
+		self.clients.send_user_typing_pause(channel_id)
 		self.send_message(channel_id, quotesBB)
 		
     def write_error(self, channel_id, err_msg):
