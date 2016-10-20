@@ -48,10 +48,10 @@ class Messenger(object):
 		
     def write_quoteBB(self, channel_id):
 		quotesBB=["A guy opens his door and gets shot and you think that of me? No...I AM THE ONE WHO KNOCKS","Whats the point of being an outlaw when you got responsibilities?","Stay out of my territory","This is my own private domicile and I will not be harassed…bitch!"]
-		txt = format(random.choice(quotesBB)
+		txt = random.choice(quotesBB)
 		self.clients.send_user_typing_pause(channel_id)
-		self.send_message(channel_id, quotesBB)
+		self.send_message(channel_id, txt)
 		
-   def write_error(self, channel_id, err_msg):
+ def write_error(self, channel_id, err_msg):
         txt = ":face_with_head_bandage: Houston, we have a problem :\n>```{}```".format(err_msg)
         self.send_message(channel_id, txt)
