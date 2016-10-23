@@ -37,7 +37,7 @@ class RtmEventHandler(object):
 
     					
     def is_quote_mention(self, message):
-	if re.search('quotes|quote|bb reference|breaking bad|movie reference|movie references', message):
+	if re.search('quotes|quote|bb reference|breaking bad|movie reference|movie references|jessy pinkman|heisenberg', message):
             return True
         else:
             return False
@@ -54,7 +54,7 @@ class RtmEventHandler(object):
                     self.msg_writer.write_help_message(event['channel'])
                 elif re.search('hi|hey|hello|howdy|hello bot|hello Quotebot|hi quotebot', msg_txt):
                     self.msg_writer.write_greeting(event['channel'], event['user'])
-                elif re.search('quotes|quote|movie reference', msg_txt):
+                elif re.search('quotes|quote|movie reference|movie references', msg_txt):
                     self.msg_writer.write_quote(event['channel'])
                 elif re.search('bb reference|breaking bad|jessy pinkman|heisenberg', msg_txt):
                     self.msg_writer.write_quoteBB(event['channel'])
