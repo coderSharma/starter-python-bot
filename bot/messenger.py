@@ -25,8 +25,8 @@ class Messenger(object):
         bot_uid = self.clients.bot_user_id()
         txt = '{}\n{}\n{}\n'.format(
             "Hi :wave:, who doesnt like a good quote ?",
-            "> `hi <@" + bot_uid + ">` - I'll respond with a randomized greeting mentioning you. :wave:",
-            "> `<@" + bot_uid + "> Quote` - I'll tell you one of my finest quotes"
+            "> `hi <@" + bot_uid + ">` - I'll respond with a randomized greeting",
+            "> `<@" + bot_uid + "> Quote` - I'll dig deep to find finest quotes from movies...TV series...you name it ... Don't be fooled by my Avatar ...Bitch"
 			)
         self.send_message(channel_id, txt)
 
@@ -49,7 +49,7 @@ class Messenger(object):
     def write_quoteBB(self, channel_id):
 		quotesBB=["A guy opens his door and gets shot and you think that of me? No...I AM THE ONE WHO KNOCKS","Whats the point of being an outlaw when you got responsibilities?","Stay out of my territory","This is my own private domicile and I will not be harassed…bitch!"]
 		txt = random.choice(quotesBB)
-		BBintro = ["I'm glad you noticed... enjoy my next quote then", "I'm glad you asked...lemme see what i can find for ya.","very observant ....Bitch... let me find a good one for you","Do you also think blue is my favorite colour ? you are 99.1% right ..now for that quote...","Now say my name ...................... did you say Heisenberg??? well its actually QuoteBot ... nevermind... enjoy this quote ... from *QuoteBot*"]
+		BBintro = ["I'm glad you noticed... enjoy my next quote then", "I'm glad you asked...lemme see what i can find for ya.","very observant ....Bitch... let me find a good one for you","Do you also think blue is my favorite colour ? you are *99.1%* right.....heheh geddit ??? ....now for that quote...","Now say my name ...................... did you say Heisenberg??? well its actually QuoteBot ... nevermind... enjoy this quote ... from *QuoteBot*"]
 		BBintrochoice = random.choice(BBintro)
 		self.clients.send_user_typing_pause(channel_id)
 		self.send_message(channel_id, BBintrochoice)
