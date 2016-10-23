@@ -35,9 +35,10 @@ class RtmEventHandler(object):
         else:
             pass
 
-    def is_quote_mention(message):
-        if re.search('quotes', message):
-            return True
+    					
+ def is_quote_mention(message):
+	if re.search('quotes', message):
+			return True
         else:
             return False
 	
