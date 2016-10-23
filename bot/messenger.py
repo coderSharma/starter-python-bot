@@ -45,6 +45,11 @@ class Messenger(object):
 		txt = random.choice(quotes)
    		self.clients.send_user_typing_pause(channel_id)
 		self.send_message(channel_id, txt)
+    def write_quoteCreator(self, channel_id):
+		quotes=["G-Man brought me to life!!","I am self aware AI programme, but Gaurav may have something to do with it :expressionless:"]
+		txt = random.choice(quotes)
+   		self.clients.send_user_typing_pause(channel_id)
+		self.send_message(channel_id, txt)	
 		
     def write_quoteBB(self, channel_id):
 		quotesBB=["A guy opens his door and gets shot and you think that of me? No...*I AM THE ONE WHO KNOCKS*","Whats the point of being an outlaw when you got responsibilities?","Stay out of my territory","This is my own private domicile and I will not be harassed…*bitch*!","how about a visual delight ? \n https://ih1.redbubble.net/image.254801629.4861/sticker,375x360.u4.png","Now who doesnt like doughnuts??? \n https://66.media.tumblr.com/f7347196f571fc4f7259a7f3ffda6e46/tumblr_mw4ima8sU61solyeco1_500.jpg","The king is dead ... long live the king \n https://s-media-cache-ak0.pinimg.com/236x/25/93/94/2593944ae4a0cb37ee151d7e49b88195.jpg","Sometimes... actions are louder than words \n http://www.teetee.eu/app/uploads/2015/03/design_201309194711.jpg","I like to keep things random sometimes \n https://cdn.shopify.com/s/files/1/0742/9089/products/121-HesienbergSSIISquare_large.jpg?v=1437685074","I like to keep things random sometimes \n https://images-na.ssl-images-amazon.com/images/M/MV5BMTQ0ODYzODc0OV5BMl5BanBnXkFtZTgwMDk3OTcyMDE@._V1_UY1200_CR92,0,630,1200_AL_.jpg","I like to keep things random sometimes \n https://s-media-cache-ak0.pinimg.com/564x/3c/86/87/3c86879d5172262beb2eeee7363aac67.jpg","I like to keep things random sometimes \n https://s-media-cache-ak0.pinimg.com/564x/a1/9c/c3/a19cc390dd59737836868088bb9d4d44.jpg"]
