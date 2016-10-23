@@ -49,6 +49,9 @@ class Messenger(object):
     def write_quoteBB(self, channel_id):
 		quotesBB=["A guy opens his door and gets shot and you think that of me? No...I AM THE ONE WHO KNOCKS","Whats the point of being an outlaw when you got responsibilities?","Stay out of my territory","This is my own private domicile and I will not be harassed…bitch!"]
 		txt = random.choice(quotesBB)
+		BBintro = ["I'm glad you noticed... enjoy my next quote then", "I'm glad you asked...lemme see what i can find for ya.","very observant ....Bitch... let me find a good one for you","Do you also think blue is my favorite colour ? you are 99.1% right ..now for that quote..."]
+		self.clients.send_user_typing_pause(channel_id)
+		self.send_message(channel_id, BBintro)
 		self.clients.send_user_typing_pause(channel_id)
 		self.send_message(channel_id, txt)
 		
