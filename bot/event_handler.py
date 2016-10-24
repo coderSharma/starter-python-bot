@@ -72,7 +72,7 @@ class RtmEventHandler(object):
                     self.msg_writer.write_quoteBB(event['channel'])
                 elif re.search('who is your creator| who created you|who created quotebot', msg_txt):
                     self.msg_writer.write_quoteCreator(event['channel'])
-		elif re.search('say my name', msg_txt):
+		elif re.search('say my name|SAY MY NAME|SAY my NAME|say MY name|SaY mY nAmE', msg_txt):
                     self.msg_writer.write_name(event['channel'],event['user'])	
                 else:
                     self.msg_writer.write_prompt(event['channel'])
