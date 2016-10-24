@@ -42,14 +42,20 @@ class RtmEventHandler(object):
         else:
             return False
 	
+    def is_creator_mention(self, message):
+	if re.search('who is your creator| who created you|who created quotebot', message):
+            return True
+        else:
+            return False		
+	
     def _handle_message(self, event):
         # Filter out messages from the bot itself, and from non-users (eg. webhooks)
         if ('user' in event) and (not self.clients.is_message_from_me(event['user'])):
         #if not self.clients.is_message_from_me(event['user']): 
             msg_txt = event['text']
 
-            if (self.clients.is_bot_mention(msg_txt)) or (self.is_quote_mention(msg_txt)) :
-                # e.g. user typed: "@pybot shout a quote!"
+            if (self.clients.is_bot_mention(msg_txt) or self.is_quote_mention(msg_txt) or self.is_creator_mention(msg_txt)) :
+                # e.g. user typed a direct message or Quotebot was listening for a keyword shout a quote!"
                 if 'help' in msg_txt:
                     self.msg_writer.write_help_message(event['channel'])
                 elif re.search('hi|hey|hello|howdy|hello bot|hello Quotebot|hi quotebot', msg_txt):
@@ -58,7 +64,7 @@ class RtmEventHandler(object):
                     self.msg_writer.write_quote(event['channel'])
                 elif re.search('bb reference|breaking bad|jesse pinkman|heisenberg|bb references|BB|Walter White|walter white', msg_txt):
                     self.msg_writer.write_quoteBB(event['channel'])
-                elif re.search('who is your creator| who created you|who created quotebot|', msg_txt):
+                elif re.search('who is your creator| who created you|who created quotebot', msg_txt):
                     self.msg_writer.write_quoteCreator(event['channel'])
                 else:
                     self.msg_writer.write_prompt(event['channel'])
