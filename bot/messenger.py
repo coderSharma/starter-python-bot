@@ -24,9 +24,9 @@ class Messenger(object):
     def write_help_message(self, channel_id):
         bot_uid = self.clients.bot_user_id()
         txt = '{}\n{}\n{}\n'.format(
-            "Hi :wave:, who doesnt like a good movie reference? I'll dig deep to find finest quotes from movies...TV series...you name it ... Don't be fooled by my Avatar ...Bitch... be sure I will evolve over time",
-            "> `hi <@" + bot_uid + ">` - I'll respond with a randomized greeting",
-            "Best part ..you dont have to use > `<@" + bot_uid + "> ` to talk to me ... well you can but where's the fun in that ?"
+            "Hi :wave:, who doesnt like a good movie reference? and I'm a BOT who provides just that", 
+            "I'll dig deep to find finest quotes from movies...TV series...you name it",
+            "Best part ..you dont have to use `<@" + bot_uid + "> ` to talk to me ... well you can but where's the fun in that ?"
 			)
         self.send_message(channel_id, txt)
 
