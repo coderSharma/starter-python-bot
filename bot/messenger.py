@@ -24,7 +24,7 @@ class Messenger(object):
     def write_help_message(self, channel_id):
         bot_uid = self.clients.bot_user_id()
         txt = '{}\n{}\n{}\n'.format(
-            "Hi :wave:, who doesnt like a good quote ?",
+            "Hi :wave:, who doesnt like a good quote ?... be sure I will evolve over time",
             "> `hi <@" + bot_uid + ">` - I'll respond with a randomized greeting",
             "> `<@" + bot_uid + "> Quote` - I'll dig deep to find finest quotes from movies...TV series...you name it ... Don't be fooled by my Avatar ...Bitch"
 			)
@@ -41,7 +41,7 @@ class Messenger(object):
         self.send_message(channel_id, txt)
 
     def write_quote(self, channel_id):
-		quotes=["To infinity…and beyond!","I have come here to chew bubblegum and kick ass, and I'm all out of bubblegum.","Surely, you cant be serious – I am serious, and don't call me Shirley.","I pity the fool","There can be only @juantwothree","THIS IS SPARTA!!!!","Shit just got real","It's clobberin time!","Go ahead, make my day....","Run, Forrest, run!!!","I'm too old for this shit..","I'll be back","SHOW ME THE MONEY!!!","Greed, for lack of a better word, is good..","You can't handle the truth!","Snap out of it!","I feel the need…the need for speed :top: :gun: ","You're gonna need a bigger boat","I see dead people","Great scott!","Life is like a box of chocolates :chocolate_bar: you never know what youre gonna get","I'm gonna make him an offer he can't refuse","They may take our lives, but they'll never take…OUR FREEDOM :crossed_swords: !!!","Oh, behave!","You had me at hello","I'm not bad...I'm just drawn that way",":trollface: Ssssssssssssmokin :trollface:","I'll have what shes having","Wax on, wax off. Wax on, wax off","Hakuna Matata","I'm sorry,Sharpy...I'm afraid I cant do that",":spock-hand::skin-tone-2: Live long and prosper :spock-hand::skin-tone-2:"]
+		quotes=["To infinity…and beyond!","Let there be light...","I have come here to chew bubblegum and kick ass, and I'm all out of bubblegum.","Surely, you cant be serious – I am serious, and don't call me Shirley.","I pity the fool","There can be only @juantwothree","THIS IS SPARTA!!!!","Shit just got real","It's clobberin time!","Go ahead, make my day....","Run, Forrest, run!!!","I'm too old for this shit..","I'll be back","SHOW ME THE MONEY!!!","Greed, for lack of a better word, is good..","You can't handle the truth!","Snap out of it!","I feel the need…the need for speed :top: :gun: ","You're gonna need a bigger boat","I see dead people","Great scott!","Life is like a box of chocolates :chocolate_bar: you never know what youre gonna get","I'm gonna make him an offer he can't refuse","They may take our lives, but they'll never take…OUR FREEDOM :crossed_swords: !!!","Oh, behave!","You had me at hello","I'm not bad...I'm just drawn that way",":trollface: Ssssssssssssmokin :trollface:","I'll have what shes having","Wax on, wax off. Wax on, wax off","Hakuna Matata","I'm sorry,Sharpy...I'm afraid I cant do that",":spock-hand::skin-tone-2: Live long and prosper :spock-hand::skin-tone-2:"]
 		txt = random.choice(quotes)
    		self.clients.send_user_typing_pause(channel_id)
 		self.send_message(channel_id, txt)
