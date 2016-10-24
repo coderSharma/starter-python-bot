@@ -37,7 +37,7 @@ class Messenger(object):
 		
     def write_name(self, channel_id, user_id):
         greetings = ["...Use it .... don't abuse it !"," ???",""," I'm sorry but I don't have a deep sexy voice "," ..now ......you say my name"]
-        txt = '{} <@{}>!'.format(user_id,random.choice(greetings))
+        txt = '<@{}>! {}'.format(user_id,random.choice(greetings))
         self.send_message(channel_id, txt)		
 
     def write_prompt(self, channel_id):
