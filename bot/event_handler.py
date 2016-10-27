@@ -64,7 +64,7 @@ class RtmEventHandler(object):
                 # e.g. user typed a direct message or Quotebot was listening for a keyword shout a quote!"
                 if 'help' in msg_txt:
                     self.msg_writer.write_help_message(event['channel'])
-                elif re.search('hi|hey|hello|howdy|hello bot|hello Quotebot|hi quotebot', msg_txt):
+                elif re.search('hi quotebot|hey quotebot|hello quotebot|howdy quotebot|hi Quotebot|hey Quotebot|hello Quotebot|howdy Quotebot|hello bot|Hello Quotebot|hola quotebot|hola Quotebot', msg_txt):
                     self.msg_writer.write_greeting(event['channel'], event['user'])
                 elif re.search('quotes|quote|movie reference|movie references', msg_txt):
                     self.msg_writer.write_quote(event['channel'])
