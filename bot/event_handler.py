@@ -46,8 +46,13 @@ class RtmEventHandler(object):
 	if re.search('say my name', message):
             return True
         else:
-            return False			
-	
+            return False
+				
+    def request_movie_quote (self, message):
+	if re.search('quote from|quote from movie|Quote from movie|Quote from'):
+	 return True
+	else:return False
+
     def is_creator_mention(self, message):
 	if re.search('who is your creator| who created you|who created quotebot', message):
             return True
@@ -60,7 +65,7 @@ class RtmEventHandler(object):
         #if not self.clients.is_message_from_me(event['user']): 
             msg_txt = event['text']
 
-            if (self.clients.is_bot_mention(msg_txt) or self.is_quote_mention(msg_txt) or self.is_creator_mention(msg_txt) or self.is_name_mention(msg_txt)) :
+            if (self.clients.is_bot_mention(msg_txt) or self.is_quote_mention(msg_txt) or self.is_creator_mention(msg_txt) or self.is_name_mention(msg_txt) or self.request_movie_quote(msg_txt)) :
                 # e.g. user typed a direct message or Quotebot was listening for a keyword shout a quote!"
                 if 'help' in msg_txt:
                     self.msg_writer.write_help_message(event['channel'])
@@ -73,6 +78,8 @@ class RtmEventHandler(object):
                 elif re.search('who is your creator| who created you|who created quotebot', msg_txt):
                     self.msg_writer.write_quoteCreator(event['channel'])
 		elif re.search('say my name|SAY MY NAME|SAY my NAME|say MY name|SaY mY nAmE', msg_txt):
-                    self.msg_writer.write_name(event['channel'],event['user'])	
+                    self.msg_writer.write_name(event['channel'],event['user'])
+        elif re.search('quote from|quote from movie|Quote from movie|Quote from', msg_txt):
+					self.msg_txt.get_quote(['channel'],event['user'])
                 else:
                     self.msg_writer.write_prompt(event['channel'])
