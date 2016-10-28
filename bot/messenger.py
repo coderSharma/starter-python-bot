@@ -35,6 +35,12 @@ class Messenger(object):
         txt = '{} <@{}>!'.format(random.choice(greetings), user_id)
         self.send_message(channel_id, txt)
 		
+	def	get_quote(self,channel_id):
+		self.clients.send_user_typing_pause(channel_id)
+		message = "random Quote"
+        message_json = {"type": "message", "channel": self.id, "text": message}
+        self.server.send_to_websocket(message_json)
+        
     def write_name(self, channel_id, user_id):
         greetings = ["...Use it .... don't abuse it !"," ???",""," I'm sorry but I don't have a deep sexy voice "," ..now ......you say my name"]
         txt = '<@{}>! {}'.format(user_id,random.choice(greetings))
