@@ -49,12 +49,11 @@ class RtmEventHandler(object):
             return False
 
 			
-    def request_movie_quote (self, message):
+    def request_movie_quote(self, message):
 	if re.search('quote from|quote from movie|Quote from movie|Quote from',message):
 	    return True
 	else:
             return False
-
 
     def is_creator_mention(self, message):
 	if re.search('who is your creator| who created you|who created quotebot', message):
