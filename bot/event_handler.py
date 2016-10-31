@@ -50,7 +50,7 @@ class RtmEventHandler(object):
 
 			
     def request_movie_quote(self, message):
-	if re.search('quote from|quote from movie|Quote from movie|Quote from',message):
+	if re.search('quote from|quote from movie|Quote from movie|Quote from', message):
 	    return True
 	else:
             return False
