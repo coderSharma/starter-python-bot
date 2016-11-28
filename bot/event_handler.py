@@ -71,11 +71,11 @@ class RtmEventHandler(object):
                 # e.g. user typed a direct message or Quotebot was listening for a keyword shout a quote!"
                 if 'help' in msg_txt:
                     self.msg_writer.write_help_message(event['channel'])
-                elif re.search('hi quotebot|hey quotebot|hello quotebot|howdy quotebot|hi Quotebot|hey Quotebot|hello Quotebot|howdy Quotebot|hello bot|Hello Quotebot|hola quotebot|hola Quotebot', msg_txt):
+                elif re.search('hi quotebot|hey quotebot|hello quotebot|howdy quotebot|hi Quotebot|hey Quotebot|hello Quotebot|howdy Quotebot|hello bot|Hello Quotebot|hola quotebot|hola Quotebot|Morning Quotebot|hi quoteBot|hey quoteBot|hello quoteBot|howdy quoteBot|hi QuoteBot|hey QuoteBot|hello QuoteBot|howdy QuoteBot|hello Bot|Hello QuoteBot|hola quoteBot|hola QuoteBot|Morning QuoteBot', msg_txt):
                     self.msg_writer.write_greeting(event['channel'], event['user'])
                 elif re.search('quotes|quote|movie reference|movie references', msg_txt):
                     self.msg_writer.write_quote(event['channel'])
-                elif re.search('bb reference|breaking bad|jesse pinkman|heisenberg|bb references|BB|Walter White|walter white', msg_txt):
+                elif re.search('bb reference|BB reference|breaking bad|jesse pinkman|heisenberg|Heisenberg|bb references|BB||bb|Walter White|walter white', msg_txt):
                     self.msg_writer.write_quoteBB(event['channel'])
                 elif re.search('who is your creator| who created you|who created quotebot', msg_txt):
                     self.msg_writer.write_quoteCreator(event['channel'])
