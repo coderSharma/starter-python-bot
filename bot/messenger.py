@@ -34,8 +34,8 @@ class Messenger(object):
         greetings = ["Do you feel lucky ....", "Greetings ....","They tell me ...Winter is coming...", "Valar Morghulis...","Say hello to my little friend...","You talkin to me .."]
         txt = '{} <@{}>!'.format(random.choice(greetings), user_id)
         self.send_message(channel_id, txt)
-		
-	def	get_quote(self,channel_id):
+
+ def get_quote(self,channel_id):
 		self.clients.send_user_typing_pause(channel_id)
 		message = "random Quote"
         message_json = {"type": "message", "channel": self.id, "text": message}
