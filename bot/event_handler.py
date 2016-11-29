@@ -35,41 +35,41 @@ class RtmEventHandler(object):
         else:
             pass
 
-    					
+                        
     def is_quote_mention(self, message):
-	if re.search('quotes|quote|movie reference|movie references', message):
+    if re.search('quotes|quote|movie reference|movie references', message):
             return True
         else:
             return False
 
                                        
- def is_BB_mention(self, message):
-	if re.search('bb reference|BB reference|breaking bad|jesse pinkman|heisenberg|Heisenberg|bb references|BB||bb|Walter White|walter white', message):
+    def is_BB_mention(self, message):
+    if re.search('bb reference|BB reference|breaking bad|jesse pinkman|heisenberg|Heisenberg|bb references|BB||bb|Walter White|walter white', message):
             return True
         else:
             return False            
-			
+            
     def is_name_mention(self, message):
-	if re.search('say my name|SAY MY NAME|SAY my NAME|say MY name|SaY mY nAmE', message):
+    if re.search('say my name|SAY MY NAME|SAY my NAME|say MY name|SaY mY nAmE', message):
             return True
         else:
             return False
-			
+            
     def request_greeting(self, message):
-	if re.search('hi quotebot|hey quotebot|hello quotebot|howdy quotebot|hi Quotebot|hey Quotebot|hello Quotebot|howdy Quotebot|hello bot|Hello Quotebot|hola quotebot|hola Quotebot|Morning Quotebot|hi quoteBot|hey quoteBot|hello quoteBot|howdy quoteBot|hi QuoteBot|hey QuoteBot|hello QuoteBot|howdy QuoteBot|hello Bot|Hello QuoteBot|hola quoteBot|hola QuoteBot|Morning QuoteBot', message):
-	    return True
-	else:
+    if re.search('hi quotebot|hey quotebot|hello quotebot|howdy quotebot|hi Quotebot|hey Quotebot|hello Quotebot|howdy Quotebot|hello bot|Hello Quotebot|hola quotebot|hola Quotebot|Morning Quotebot|hi quoteBot|hey quoteBot|hello quoteBot|howdy quoteBot|hi QuoteBot|hey QuoteBot|hello QuoteBot|howdy QuoteBot|hello Bot|Hello QuoteBot|hola quoteBot|hola QuoteBot|Morning QuoteBot', message):
+        return True
+    else:
             return False
           
- def is_creator_mention(self, message):
-	if re.search('who is your creator| who created you|who created quotebot', message):
+    def is_creator_mention(self, message):
+    if re.search('who is your creator| who created you|who created quotebot', message):
             return True
         else:
-            return False		
-	
+            return False        
+    
     def _handle_message(self, event):
         # Filter out messages from the bot itself, and from non-users (eg. webhooks)
-        if ('user' in event) and (not self.clients.is_message_from_me(event['user'])):
+    if ('user' in event) and (not self.clients.is_message_from_me(event['user'])):
         #if not self.clients.is_message_from_me(event['user']): 
             msg_txt = event['text']
 
@@ -85,7 +85,7 @@ class RtmEventHandler(object):
                     self.msg_writer.write_quoteBB(event['channel'])
                 elif re.search('who is your creator| who created you|who created quotebot', msg_txt):
                     self.msg_writer.write_quoteCreator(event['channel'])
-		elif re.search('say my name|SAY MY NAME|SAY my NAME|say MY name|SaY mY nAmE', msg_txt):
+                elif re.search('say my name|SAY MY NAME|SAY my NAME|say MY name|SaY mY nAmE', msg_txt):
                     self.msg_writer.write_name(event['channel'],event['user'])
                 elif re.search('quote from|quote from movie|Quote from movie|Quote from', msg_txt):
                     self.msg_txt.get_quote(['channel'],event['user'])
