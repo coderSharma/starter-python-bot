@@ -75,3 +75,8 @@ class Messenger(object):
     def write_error(self, channel_id, err_msg):
         txt = ":face_with_head_bandage: Houston, we have a problem :\n>```{}```".format(err_msg)
         self.send_message(channel_id, txt)
+
+    def sense_RG(self, channel_id, user_id):
+        txt="Rajjjjjjaaaaaaaaaaaaannnnnnnnnnniiiiiiiiiiiiiiiiiiieeeeeeeeeeeeeee"
+        if user_id =="U03BYG0DJ":
+            self.send_message(channel_id, txt)
