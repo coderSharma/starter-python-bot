@@ -77,11 +77,12 @@ class Messenger(object):
         self.send_message(channel_id, txt)
 
     def sense_RG(self, channel_id, user_id):
-        self.clients.send_user_typing_pause(channel_id)
 	txtRG="Rajjjjjjaaaaaaaaaaaaannnnnnnnnnniiiiiiiiiiiiiiiiiiieeeeeeeeeeeeeee"
 	txtEff="Can you please get a haircut first?"
 	print user_id
         if user_id =="U03BYG0DJ":
-            self.send_message(channel_id, txtRG)
+         self.clients.send_user_typing_pause(channel_id)
+         self.send_message(channel_id, txtRG)
 	elif user_id == "U1QCY6ZGB":
-	    self.send_message(channel_id, txtEff)
+	 self.clients.send_user_typing_pause(channel_id)
+	 self.send_message(channel_id, txtEff)
