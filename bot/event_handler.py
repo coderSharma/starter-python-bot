@@ -95,7 +95,6 @@ class RtmEventHandler(object):
             if self.clients.is_bot_mention(msg_txt) or self.is_quote_mention(msg_txt) or self.is_creator_mention(msg_txt) or self.is_name_mention(msg_txt) or self.request_greeting(msg_txt) or self.is_BB_mention(msg_txt):
                     if 'help' in msg_txt:
                         self.msg_writer.write_help_message(event['channel'])
-                    elif 
                     elif re.search('hi quotebot|hey quotebot|hello quotebot|howdy quotebot|hi Quotebot|hey Quotebot|hello Quotebot|howdy Quotebot|hello bot|Hello Quotebot|hola quotebot|hola Quotebot|Morning Quotebot|hi quoteBot|hey quoteBot|hello quoteBot|howdy quoteBot|hi QuoteBot|hey QuoteBot|hello QuoteBot|howdy QuoteBot|hello Bot|Hello QuoteBot|hola quoteBot|hola QuoteBot|Morning QuoteBot',msg_txt):
                         self.msg_writer.write_greeting(event['channel'],event['user'])
                     elif re.search('quotes|quote|movie reference|movie references', msg_txt):
