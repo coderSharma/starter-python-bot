@@ -77,7 +77,7 @@ class Messenger(object):
         self.send_message(channel_id, txt)
 
     def sense_RG(self, channel_id, user_id):
-        self.clients.send_user_typing_pause(channel_id
+        self.clients.send_user_typing_pause(channel_id)
 	txt="Rajjjjjjaaaaaaaaaaaaannnnnnnnnnniiiiiiiiiiiiiiiiiiieeeeeeeeeeeeeee"
 	print user_id
         if user_id =="U03BYG0DJ":
