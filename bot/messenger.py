@@ -46,10 +46,6 @@ class Messenger(object):
         txt = '<@{}>! {}'.format(user_id,random.choice(greetings))
         self.send_message(channel_id, txt)
 	
-    def write_Rajani(self,channel_id):
-	txt="Rajaaaaaaaaaaannnnnnnnnnnniiiiiiiieeeeeeeeeeeeeeee"
-	self.send_message(channel_id,txt)
-	
     def write_prompt(self, channel_id):
         bot_uid = self.clients.bot_user_id()
         txt = "Whoa ... spell it out for me.. please ? (e.g. `<@" + bot_uid + "> help`)"
