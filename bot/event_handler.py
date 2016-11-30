@@ -88,6 +88,7 @@ class RtmEventHandler(object):
 
         if 'user' in event \
             and not self.clients.is_message_from_me(event['user']):
+	    msg_txt = event['text']
             if self.clients.is_bot_mention(msg_txt) or self.is_quote_mention(msg_txt) or self.is_creator_mention(msg_txt) or self.is_name_mention(msg_txt) or self.request_greeting(msg_txt) or self.is_BB_mention(msg_txt):
                     self.msg_writer.sense_RG(event['channel'],event['user'])
 		    if 'help' in msg_txt:
