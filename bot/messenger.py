@@ -78,5 +78,5 @@ class Messenger(object):
 
     def sense_RG(self, channel_id, user_id):
         txt="Rajjjjjjaaaaaaaaaaaaannnnnnnnnnniiiiiiiiiiiiiiiiiiieeeeeeeeeeeeeee"
-        if user_id =="U03BYG0DJ":
+        if user_id =="U02V37D3M":
             self.send_message(channel_id, txt)
