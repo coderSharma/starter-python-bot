@@ -104,6 +104,6 @@ class RtmEventHandler(object):
                     elif re.search('say my name|SAY MY NAME|SAY my NAME|say MY name|SaY mY nAmE', msg_txt):
                         self.msg_writer.write_name(event['channel'],event['user'])
                     elif re.search('quote from|quote from movie|Quote from movie|Quote from|api', msg_txt):
-                        self.msg_txt.get_quote(['channel'], event['user'])
+                        self.msg_txt.get_quote(['channel'])
                     else:
                         self.msg_writer.write_prompt(event['channel'])
