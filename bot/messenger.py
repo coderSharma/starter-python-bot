@@ -65,6 +65,7 @@ class Messenger(object):
 	txt = random.choice(quotes)
    	self.clients.send_user_typing_pause(channel_id)
 	self.send_message(channel_id, txt)
+
     def write_quoteCreator(self, channel_id):
 	quotes=["G-Man brought me to life!!","I am self aware AI programme, but Gaurav may have something to do with it :expressionless:"]
 	txt = random.choice(quotes)
