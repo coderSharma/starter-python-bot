@@ -82,7 +82,8 @@ class Messenger(object):
 	txtEff=""
 	print user_id
         if user_id =="U02V37D3M":
-         self.clients.send_user_typing_pause(channel_id)
-	 printflag=(randint(0,6))
-	 if printflag == 3:
-          self.send_message(channel_id, txtRG)
+         printflag=(randint(0,6))
+	 self.send_message(channel_id,printflag)
+	  if printflag == 3:
+		self.clients.send_user_typing_pause(channel_id)
+          	self.send_message(channel_id, txtRG)
