@@ -48,7 +48,7 @@ class RtmEventHandler(object):
         else:
             pass
  def is_quote_mention(self, message):
-        if re.search('quotes|quote|movie reference|movie references',
+        if re.search('quotes|quote|movie reference|movie references|api',
                      message):
             return True
         else:
