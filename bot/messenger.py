@@ -48,8 +48,7 @@ class Messenger(object):
   	}
 	)
 	message = response['quote']
-        message_json = {"type": "message", "channel": self.id, "text": message}
-        self.server.send_to_websocket(message_json)
+        self.send_message(channel_id, message)
         
     def write_name(self, channel_id, user_id):
         greetings = ["...Use it .... don't abuse it !"," ???",""," I'm sorry but I don't have a deep sexy voice "," ..now ......you say my name"]
