@@ -2,7 +2,8 @@
 
 import logging
 import random
-import sys  
+import sys
+import json
 from random import randint
 
 reload(sys)  
@@ -38,7 +39,15 @@ class Messenger(object):
 
     def get_quote(self,channel_id):
 	self.clients.send_user_typing_pause(channel_id)
-	message = "random Quote"
+	# These code snippets use an open-source library.
+	response = unirest.post("https://andruxnet-random-famous-quotes.p.mashape.com/?cat=movies",
+  	headers={
+    	"X-Mashape-Key": "CPHgYp1cxDmsh8ZnjkJ07nDRmTnGp1vUwG9jsnd8ImknFB74vM",
+    	"Content-Type": "application/x-www-form-urlencoded",
+    	"Accept": "application/json"
+  	}
+	)
+	message = response['quote']
         message_json = {"type": "message", "channel": self.id, "text": message}
         self.server.send_to_websocket(message_json)
         
