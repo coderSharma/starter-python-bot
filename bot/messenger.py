@@ -3,7 +3,6 @@
 import logging
 import random
 import sys
-import unirest
 import json
 
 from random import randint
