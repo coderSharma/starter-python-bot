@@ -38,20 +38,6 @@ class Messenger(object):
         greetings = ["Do you feel lucky ....", "Greetings ....","They tell me ...Winter is coming...", "Valar Morghulis...","Say hello to my little friend...","You talkin to me .."]
         txt = '{} <@{}>!'.format(random.choice(greetings), user_id)
         self.send_message(channel_id, txt)
-
-    def get_quote(self,channel_id):
-	self.clients.send_user_typing_pause(channel_id)
-	# These code snippets use an open-source library.
-	response = unirest.post("https://andruxnet-random-famous-quotes.p.mashape.com/?cat=movies",
-  	headers={
-    	"X-Mashape-Key": "CPHgYp1cxDmsh8ZnjkJ07nDRmTnGp1vUwG9jsnd8ImknFB74vM",
-    	"Content-Type": "application/x-www-form-urlencoded",
-    	"Accept": "application/json"
-  	}
-	)
-	message = response['quote']
-        self.send_message(channel_id, message)
-        
     def write_name(self, channel_id, user_id):
         greetings = ["...Use it .... don't abuse it !"," ???",""," I'm sorry but I don't have a deep sexy voice "," ..now ......you say my name"]
         txt = '<@{}>! {}'.format(user_id,random.choice(greetings))
